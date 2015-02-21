@@ -2,14 +2,16 @@
 
 class Player
 
-attr_accessor :name
+attr_accessor :name, :secret
 
-def initialize
+def initialize(name, secret)
 	@name = name
-	@playerID = playerID
+	@secret = secret
 end
 
-
+def test
+	
+end
 
 
 
