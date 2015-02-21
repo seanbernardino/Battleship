@@ -6,6 +6,17 @@ def para(lines) # Method simply adds line breaks when needed in the console disp
 	end
 end
 
+def turn
+	player1.turn = !player2.turn
+	
+end
+
+def playgame #game execution
+
+	
+end
+
+
 def input_user_info #accepts both players inputs
 	puts "Player 1: Please enter your name"
 	p1_name = gets.chomp
@@ -32,6 +43,7 @@ def input_user_info #accepts both players inputs
 	#At a later stage add a method to validate that the input is a number
 	p2_secret_num = gets.chomp.to_i
 	player2 = Player.new(p2_name, p2_secret_num)
+	playgame
 end
 
 def menu
@@ -46,6 +58,9 @@ def menu
 end
 
 menu 
+
+
+
 
 
 
