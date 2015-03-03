@@ -4,7 +4,7 @@ class Player
 
 	attr_accessor :name, :secret, :turn
 
-	def initialize(name, secret)
+	def initialize(name = "John Doe", secret = 50)
 		@name = name
 		@secret = secret
 		@current_guess = 0
