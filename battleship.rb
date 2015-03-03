@@ -12,10 +12,13 @@ end
 def toggle_turn
 	if @prev_turn == @player1.name
 		@active = @player2.name
+		@prev_turn = @player2.name
 	elsif @prev_turn == @player2.name
 		@active = @player1.name
+		@prev_turn = @player1.name
 	else
 		@active = @player1.name
+		@prev_turn = @player1.name
 	end
 	puts "#{@active}\'s turn"
 	if @active == @player1.name
@@ -29,24 +32,36 @@ def compare_guess(guess_number)
 	if @active == @player1.name
 		if guess_number == @player2.secret
 			puts "Correct. You got it."
+			puts "#{@active}, you WIN!!!"
+			abort
 		elsif guess_number > @player2.secret
 			puts "Too high. Turn over"
 			toggle_turn
+			puts "-----------------------------------------"
+			para(2)
 			get_player2_guess
 		else
 			puts "Too low. Turn over"
+			puts "-----------------------------------------"
+			para(2)
 			toggle_turn
 			get_player2_guess
 		end
 	else
 		if guess_number == @player1.secret
 			puts "Correct. You got it."
+			puts "#{@active}, you WIN!!!"
+			abort
 		elsif guess_number > @player1.secret
 			puts "Too high. Turn over"
+			puts "-----------------------------------------"
+			para(2)
 			toggle_turn
 			get_player1_guess
 		else
 			puts "Too low. Turn over"
+			puts "-----------------------------------------"
+			para(2)
 			toggle_turn
 			get_player1_guess
 		end
