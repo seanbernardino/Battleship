@@ -1,0 +1,1 @@
+#Use self.method, when you don't know the instances just yet. And when the method needs to be applied on a RECEIVER
